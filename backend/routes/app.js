@@ -1,10 +1,12 @@
 const express=require("express");
-const router=express.Router();
+
 
 const userRoutes=require("./users");
 const ideaRoutes=require("./ideas");
 const interactionRoutes=require("./interactions");
-const filterRoutes=require("./filter");
+const filterRoutes=require("./filters");
+
+const router=express.Router();
 
 router.use('/users',userRoutes);
 router.use('/ideas',ideaRoutes);

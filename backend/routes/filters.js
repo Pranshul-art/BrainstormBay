@@ -1,7 +1,8 @@
 const express=require('express');
+const { Idea } = require('../db');
 const router=express.Router();
 
-router.get('/views',(req,res)=>{
+router.get('/views',async (req,res)=>{
     //get ideas sorted by views logic
 });
 
@@ -13,10 +14,9 @@ router.get('/recent',(req,res)=>{
     //get recent ideas 
 });
 
-router.get('/search',(req,res)=>{
-    //search ideas on the basis of title
-});
+
 
 router.get('/category',(req,res)=>{
     //filter ideas by company name and technology
 });
+module.exports=router;

@@ -1,15 +1,15 @@
 const mongoose=require("mongoose");
+const connectDB = require("./databaseConnection");
 
-mongoose.connect("mongodb+srv://Pranshul-art:pranshul%4012@BrainstormBay_cluster2.pwwjlxp.mongodb.net/Brainstorm")
 
+connectDB();
 const userSchema=new mongoose.Schema({
     username:{
         type:String,
         required:true,
         trim:true,
-        unique:true,
         minLength:3,
-        maxLength:10
+        maxLength:20
     },
     password:{
         type:String,
@@ -21,10 +21,17 @@ const userSchema=new mongoose.Schema({
         required:true,
         trim:true,
         lowercase:true,
-        unique:true,
         minLength:11,
-        maxLength:30
+        maxLength:30,
+        unique:true
+    },
+    bio:{
+        type:String,
+        required:false,
+        trim:true
     }
+},{
+    timestamps:true
 });
 
 const ideaSchema=new mongoose.Schema({
@@ -36,8 +43,7 @@ const ideaSchema=new mongoose.Schema({
     description:{
         type:String,
         required:true,
-        maxLength:150,
-        minLength:50
+        minLength:5
     },
     about:{
         type:String,
@@ -55,13 +61,23 @@ const ideaSchema=new mongoose.Schema({
     build:{
         type:String,
         enum:['Software','Hardware'],
-        required:true
+        required:false
     },
     postedBy:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'User',
         required:true
+    },
+    votes:{
+        type:Number,
+        default:0
+    },
+    votedBy:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User',
     }
+},{
+    timestamps:true
 });
 
 const interactionSchema=new mongoose.Schema({
@@ -70,23 +86,22 @@ const interactionSchema=new mongoose.Schema({
         ref:'Idea',
         required:true
     },
-    user:{
-        type:Schema.Types.ObjectId,
-        ref:'User',
-        required:true
-    },
     type:{
         type:String,
         enum:['vote','comment'],
         required:true
     },
-    content:{
+    comment:{
         type:String,
         required:false
     },
     createdAt:{
         type:Date,
         default:Date.now
+    },
+    postedBy:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User',
     }
 });
 
