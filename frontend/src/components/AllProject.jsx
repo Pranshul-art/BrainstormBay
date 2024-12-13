@@ -17,7 +17,6 @@ export const AllProjectsPage = () => {
         public: false
     });
 
-    // Sample projects (would come from backend in real app)
     const allProjects = {
         private: [
             { id: 1, title: 'Personal AI Assistant', technologies: ['React', 'OpenAI'] },

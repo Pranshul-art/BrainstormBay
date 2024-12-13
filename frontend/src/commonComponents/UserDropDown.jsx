@@ -29,7 +29,6 @@ export const UserDropdown = () => {
       icon: <LogOut className="mr-2 text-red-600" />, 
       label: 'Log Out', 
       onClick: () => {
-        // Add logout logic here
         console.log('Logging out');
         navigate('/signin');
       }

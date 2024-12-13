@@ -68,7 +68,6 @@ const PostIdeaPage = () => {
         </div>
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center p-6 mt-20 pt-12">
         <div className="w-full max-w-4xl bg-white shadow-2xl rounded-2xl overflow-hidden">
-            {/* Header */}
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 flex items-center">
             <button 
                 onClick={() =>{
@@ -81,11 +80,8 @@ const PostIdeaPage = () => {
             <h1 className="text-2xl font-bold flex-grow">Post Your Innovative Idea</h1>
             </div>
 
-            {/* Content Area */}
             <div className="grid md:grid-cols-2 gap-8 p-8">
-            {/* Left Side - Idea Details */}
             <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Idea Title */}
                 <div>
                 <label className="flex items-center text-gray-700 mb-2">
                     <FileText className="mr-2 text-blue-600" /> Idea Title
@@ -101,7 +97,6 @@ const PostIdeaPage = () => {
                 />
                 </div>
 
-                {/* Idea Description */}
                 <div>
                 <label className="flex items-center text-gray-700 mb-2">
                     <FileText className="mr-2 text-green-600" /> Detailed Description
@@ -117,7 +112,6 @@ const PostIdeaPage = () => {
                 />
                 </div>
 
-                {/* Technologies */}
                 <div>
                 <label className="flex items-center text-gray-700 mb-2">
                     <Tag className="mr-2 text-purple-600" /> Technologies
@@ -132,7 +126,6 @@ const PostIdeaPage = () => {
                 />
                 </div>
 
-                {/* Visibility */}
                 <div>
                 <label className="flex items-center text-gray-700 mb-2">
                     <Globe className="mr-2 text-indigo-600" /> Visibility
@@ -161,7 +154,6 @@ const PostIdeaPage = () => {
                 </div>
             </form>
 
-            {/* Right Side - Cover Image and Preview */}
             <div className="space-y-6">
                 <div>
                 <label className="flex items-center text-gray-700 mb-2">
@@ -175,7 +167,6 @@ const PostIdeaPage = () => {
                 />
                 </div>
 
-                {/* Image Preview */}
                 {ideaData.coverImage && (
                 <div className="relative">
                     <img 
@@ -192,7 +183,6 @@ const PostIdeaPage = () => {
                 </div>
                 )}
 
-                {/* Submission Button */}
                 <button 
                 onClick={handleSubmit}
                 className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white 

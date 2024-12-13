@@ -13,7 +13,6 @@ export const InteractionsPage = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   useEffect(() => {
-    // In a real app, this would come from backend/user session
     const mockUserInteractions = [
       { 
         ideaId: 1, 
@@ -74,7 +73,6 @@ export const InteractionsPage = () => {
             My Interactions
           </h1>
 
-          {/* Filter Section */}
           <div className='bg-white rounded-2xl p-4 mb-6 flex items-center'>
             <Filter className="mr-4 text-gray-500" />
             <div className='flex space-x-4'>
@@ -94,7 +92,6 @@ export const InteractionsPage = () => {
             </div>
           </div>
 
-          {/* Interactions List */}
           <div className='space-y-4'>
             {filteredInteractions.map((interaction, index) => (
               <div 

@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 export const UserProjectsCard = () => {
     const navigate = useNavigate();
 
-    // Sample user projects (in a real app, this would come from backend/state)
     const userProjects = [
         { 
             id: 1, 

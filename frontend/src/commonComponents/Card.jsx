@@ -12,7 +12,7 @@ export const Card=({title,description,technologies,author,votes,comments})=>{
             </h1>
             <span className="text-md font-light text-slate-500">by {author}</span>
         </div>
-        <div className="font-normal text-lg text-slate-500 pb-4">
+        <div className="font-normal text-lg text-slate-500 pb-4 truncate">
             {description}
         </div>
         <div className=" flex flex-wrap gap-2 mb-4">
