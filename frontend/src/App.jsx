@@ -10,18 +10,19 @@ import { InteractionsPage } from './components/IntractionPage'
 import { MyAccountPage } from './commonComponents/MyAccount'
 import { SecurityPage } from './commonComponents/SecurityPage'
 import { AllProjectsPage } from './components/AllProject'
+import { IdeaDetails } from './commonComponents/IdeaDetails'
 
 function App() {
 
   return (
-    <>
+    <div>
 
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Signup/>}></Route>
           <Route path='/signin' element={<Signin/>}></Route>
           <Route path='/dashboard' element={<Dashboard/>}></Route>
-          <Route path='/temp' element={<RightBar/>}></Route>
+          <Route path='/temp' element={<IdeaDetails/>}></Route>
           <Route path='/post' element={<PostIdeaPage/>}></Route>
           <Route path='/interactions' element={<InteractionsPage/>}></Route>
           <Route path='/account' element={<MyAccountPage/>}></Route>
@@ -30,7 +31,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       
-    </>
+    </div>
   )
 }
 

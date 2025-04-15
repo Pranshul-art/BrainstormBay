@@ -102,7 +102,7 @@ export const AllProjectsPage = () => {
                 </div>
             </div>
             
-            <div className='pt-32 px-8 max-w-4xl mx-auto'>
+            <div className='pt-32 px-8 max-w-4xl mx-auto pb-9'>
                 <h1 className='text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-800'>
                     My Projects
                 </h1>

@@ -30,6 +30,7 @@ export const UserDropdown = () => {
       label: 'Log Out', 
       onClick: () => {
         console.log('Logging out');
+        
         navigate('/signin');
       }
     }

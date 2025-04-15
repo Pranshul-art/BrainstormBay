@@ -61,6 +61,7 @@ router.get('/',authMiddleware,async (req,res)=>{
                 techno:idea.techno || "",
                 company:idea.company || "",
                 build:idea.build,
+                votes:idea.votes,
                 postedBy:idea.postedBy.username
             }))
         });

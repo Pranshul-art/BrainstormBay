@@ -1,10 +1,19 @@
 import {MessageCircle, ThumbsUp, Star} from "lucide-react"
+import { IdeaDetails } from "./IdeaDetails"
 
 
 
 export const Card=({title,description,technologies,author,votes,comments})=>{
 
-    
+    const handleOnClick=()=>{
+        return(
+            <div className="backdrop-blur-md">
+                <IdeaDetails title={title} description={description} technologies={technologies} author={author} votes={votes} comments={comments}/>
+            </div>
+        )
+        
+       
+    }
     return<div className="bg-white shadow-md p-4 pt-7 py-5 px-5 rounded-lg">
         <div className="flex justify-between pb-3">
             <h1 className="font-bold text-2xl ">

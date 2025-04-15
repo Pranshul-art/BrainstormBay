@@ -14,6 +14,8 @@ import { Card } from '../commonComponents/Card';
 import { UserProjectsCard } from '../commonComponents/UserProjectCard';
 import { sampleIdeas } from '../assets/SampleIdeas';
 import axios from 'axios';
+import AnimatedCard from '../commonComponents/RecentFilter';
+import ScrollableFilters from '../commonComponents/RecentFilter';
 
 export const Dashboard = () => {
     const [thoughts,setThoughts]=useState([])
@@ -62,9 +64,13 @@ export const Dashboard = () => {
         return searchCondition && filterCondition;
     });
 
+    useEffect(()=>{
+       
+    },[])
+
     return (
         <div className='bg-slate-300 h-full min-h-screen'>
-            <div className='fixed w-full top-0 left-0 bg-white'>
+            <div className='fixed w-full top-0 left-0 bg-white z-20'>
                 <div className='mt-5 pb-4 shadow-md border-b-2'>
                     <TopNavbar 
                         page={"home"} 
@@ -75,56 +81,10 @@ export const Dashboard = () => {
             
             <div className=' flex ml-10'>
                 
-                <div className='fixed left-20 top-40'>
+                <div className='fixed left-20 top-40 '>
                         <UserProjectsCard />
                 </div>
-                <div className=' justify-center items-center ml-[30%] gap-10 pt-28'>
-                <div className='fixed '>
-                    <div className='bg-white h-full  rounded-2xl border-2 flex justify-center ml-10 top-0'>
-                        {['recent', 'popular', 'trending'].map(filter => (
-                            <div key={filter} className='m-7'>
-                                <button 
-                                    onClick={() => setActiveFilter(filter)}
-                                    className={`w-30 px-4 py-2 rounded-full transition-all duration-300 ${
-                                        activeFilter === filter 
-                                        ? 'bg-blue-600 text-white' 
-                                        : 'bg-blue-100 text-blue-600 hover:bg-blue-200'
-                                    }`}
-                                >
-                                    {filter.charAt(0).toUpperCase() + filter.slice(1)}
-                                </button>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                    <div className='grid grid-cols-1 gap-6 w-full pt-32'>
-                        {thoughts.map(tech=>(
-                            <div className='w-11/12'>
-                                <Card
-                                    title={tech.title}
-                                    description={tech.description}
-                                    author={tech.author} 
-                                    votes={tech.votes} 
-                                    comments={tech.comments} 
-                                    technologies={tech.techno.split(",")}/>
-                            </div>
-                        ))}
-                        {filteredIdeas.map(tech => (
-                            activeFilter===tech.activeFilter&&
-                            <div key={tech.id} className='w-11/12'>
-                                <Card 
-                                    title={tech.title} 
-                                    description={tech.description}
-                                    author={tech.author} 
-                                    votes={tech.votes} 
-                                    comments={tech.comments} 
-                                    technologies={tech.technologies}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                    
-                </div>
+                <ScrollableFilters thoughts={thoughts} filteredIdeas={filteredIdeas}/>
                 
             </div>
         </div>

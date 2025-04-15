@@ -5,11 +5,13 @@ import {
     Search,
     PlusCircle,
     ChevronDown,
-    Star
+    Star,
+    Link
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserDropdown } from './UserDropDown'; 
+// import image from '../../public/'
 
 export const TopNavbar = ({page, onSearchChange}) => {
     const navigate = useNavigate();
